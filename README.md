@@ -4,7 +4,11 @@ Triangle Sports Analytics
 ![d3 visualization](./static-figures/d3-vis.png)
 
 This repository contains an analysis of sports data associated
-with the on-going competition [Triangle Sports Analytics Competition](https://triangle-sports.github.io/)
+with the on-going competition [Triangle Sports Analytics Competition](https://triangle-sports.github.io/). 
+The task is to predict the outcome of future games including the probability of winning and point spread. 
+Moreover, we aim not only to derive the prediction but also the confidence interval of the predicted values. 
+
+Another interesting feature of this analysis is that, we aim to forecast real-time outcome, which is referred now-forecasting.
 
 This repository does not contain of data itself, while the data is scrapped from NCAA with a R package:
 
