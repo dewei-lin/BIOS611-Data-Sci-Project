@@ -1,16 +1,21 @@
-Demographic Effects on Pain Reprocessing Therapy Success
+Triangle Sports Analytics
 ========================================================
 
 ![d3 visualization](./static-figures/d3-vis.png)
 
-This repository contains an analysis of demographic data associated
-with the paper ["Effect of Pain Reprocessing Therapy vs Placebo and
-Usual Care for Patients With Chronic Back Pain: A Randomized Clinical
-Trial" (Ashar et al, JAMA Psychiatry 2021).](https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2784694 "The Paper")
+This repository contains an analysis of sports data associated
+with the on-going competition [Triangle Sports Analytics Competition](https://triangle-sports.github.io/)
 
-This repository holds a copy of (some of) the data from that study for
-convenience but it is also available
-[here](https://figshare.com/s/1840dc4c0e236a7072ca).
+This repository does not contain of data itself, while the data is scrapped from NCAA with a R package:
+
+```{R}
+install.packages("devtools")
+devtools::install_github("lbenz730/ncaahoopR")
+library(ncaahoopR)
+# For example, Duke
+get_schedule("Duke", "2022-23") %>%
+  glimpse()
+```
 
 Using This Repository
 =====================
