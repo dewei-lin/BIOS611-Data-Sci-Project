@@ -56,6 +56,10 @@ docker run -v $(pwd):/home/rstudio/tsa-ws\
            -e PASSWORD="$(cat .password)"\
            -it tsa
 ```
+If you are using Powershell:
+```
+docker run -v ${PWD}:/home/rstudio/tsa-ws -p 8787:8787 -p 8888:8888 -e PASSWORD="$(Get-Content .password)" -it tsa
+```
 
 You then visit http://localhost:8787 via a browser on your machine to
 access the machine and development environment. For the curious, we
