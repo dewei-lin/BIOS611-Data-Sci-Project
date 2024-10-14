@@ -50,11 +50,11 @@ This will create a docker container. Users using a unix-flavor should
 be able to start an RStudio server by running:
 
 ```
-docker run -v $(pwd):/home/rstudio/ashar-ws\
+docker run -v $(pwd):/home/rstudio/tsa-ws\
            -p 8787:8787\
            -p 8888:8888\
            -e PASSWORD="$(cat .password)"\
-           -it ashar
+           -it tsa
 ```
 
 You then visit http://localhost:8787 via a browser on your machine to
