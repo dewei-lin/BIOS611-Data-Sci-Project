@@ -43,7 +43,7 @@ One Docker container is provided for both "production" and
 rstudio user in the Docker container. Then you run:
 
 ```
-docker build . --build-arg linux_user_pwd="$(cat .password)" -t ashar
+docker build . --build-arg linux_user_pwd="$(cat .password)" -t tsa
 ```
 
 This will create a docker container. Users using a unix-flavor should
