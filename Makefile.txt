@@ -1,5 +1,4 @@
-.PHONY: clean ensure_logs ensure_figures all
-
+.PHONY: clean ensure_logs ensure_figures
 ensure_logs:
 	mkdir -p logs
 
@@ -7,37 +6,23 @@ ensure_figures:
 	mkdir -p figures
 
 clean:
-	rm -f data/distinct_case.csv data/unique_case.csv
 	rm -rf logs/*
 	rm -rf figures/*
-	rm -f report.html
+	rm -f  visualization.html
+	rm -f  prediction.html
+	rm -f  tsa_prediction.csv
 
-all: report.html
+tsa_prediction.csv figures/plot1 figures/plot2 figures/plot3: visualization.R utils.R
+	Rscript visualization.R
 
+logs/logs_output1 logs/logs_output2: prediction.R
+	Rscript prediction.R
 
-data/distinct_case.csv: data/source_data.csv analysis1.R utils.R
-	Rscript analysis1.R
+visualization.html: figures/plot1 figures/plot2 figures/plot3 
+	Rscript -e "rmarkdown::render('visualization.Rmd', output_file='visualization.html')"
 
-figures/plot1: data/source_data.csv analysis1.R utils.R
-	Rscript analysis1.R
-
-figures/plot2: data/source_data.csv analysis1.R utils.R
-	Rscript analysis1.R
-
-data/unique_case.csv: data/source_data.csv analysis1.R utils.R
-	Rscript analysis1.R
-
-logs/logs_output1: data/source_data.csv analysis1.R utils.R
-	Rscript analysis1.R
-
-figures/plot3: data/unique_case.csv analysis2.R
-	Rscript analysis2.R
-
-logs/logs_output2: data/unique_case.csv analysis2.R
-	Rscript analysis2.R
-
-report.html: figures/plot1 figures/plot2 figures/plot3 logs/logs_output1 logs/logs_output2
-	Rscript -e "rmarkdown::render('report.Rmd', output_file='report.html')"
+prediction.html: logs/logs_output1 logs/logs_output2 tsa_prediction.csv
+	Rscript -e "rmarkdown::render('prediction.Rmd', output_file='prediction.html')"
 
 
 
