@@ -1,7 +1,7 @@
 Triangle Sports Analytics
 ========================================================
 
-![d3 visualization](./static-figures/d3-vis.png)
+![uncimg](uncimg.jpg)
 
 This repository contains an analysis of sports data associated
 with the on-going competition [Triangle Sports Analytics Competition](https://triangle-sports.github.io/). 
